@@ -1,1 +1,1 @@
-# Countdown
+# Magento extension: Countdown
