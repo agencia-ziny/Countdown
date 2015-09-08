@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+File: app/code/community/Ziny/Countdown/etc/config.xml
+<config>
+    <modules>
+        <Ziny_Countdown>
+            <version>0.1.6</version>
+        </Ziny_Countdown>
+    </modules>
+    <frontend>
+        <routers>
+            <countdown>
+                <!--                sempre que for editar uma controller usar standard-->
+                <use>standard</use>
+                <args>
+                    <module>Ziny_Countdown</module>
+                    <frontName>countdown</frontName>
+                </args>
+            </countdown>
+        </routers>
+        <layout>
+            <updates>
+                <countdown>
+                    <file>ziny/countdown.xml</file>
+                </countdown>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <countdown>
+                <use>admin</use>
+                <args>
+                    <module>Ziny_Countdown</module>
+                    <frontName>countdown</frontName>
+                </args>
+            </countdown>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <countdown>
+                    <file>ziny/countdown.xml</file>
+                </countdown>
+            </updates>
+        </layout>
+        <menu>
+            <countdown_options translate="title" module="countdown">
+                <title>My Custom Menu Item</title>
+                <sort_order>300</sort_order>
+                <children>
+                    <!-- child items go here -->
+                    <subitem translate="title" module="countdown">
+                        <title>Subitem</title>
+                        <sort_order>10</sort_order>
+                    </subitem>
+                </children>
+            </countdown_options>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <Ziny_Countdown>
+                            <title>Countdown</title>
+                            <sort_order>202</sort_order>
+                        </Ziny_Countdown>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <countdown translate="title" module="countdown">
+                                            <title>Automated Cross Selling</title>
+                                            <sort_order>202</sort_order>
+                                        </countdown>			
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <global>
+        <models>
+            <countdown>
+                <class>Ziny_Countdown_Model</class>
+            </countdown>
+        </models>
+        <blocks>
+            <countdown>
+                <class>Ziny_Countdown_Block</class>
+            </countdown>
+        </blocks>
+    </global>
+    
+    <default>
+        <countdown>
+            <general>
+                <ativo>1</ativo>
+                <text>Expira em:</text>
+            </general>
+            <teste>
+                <text_color>333333</text_color>
+            </teste>
+        </countdown>
+    </default>
+</config>

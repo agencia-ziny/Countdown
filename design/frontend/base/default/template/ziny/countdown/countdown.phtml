@@ -1,0 +1,25 @@
+<?php
+$expira_em = $this->store();
+echo '<pre>';
+print_r($expira_em);
+echo '</pre>';
+if (isset($expira_em[0])):
+    ?>
+<div class="countdown">
+    <div class="row titulo">Expira em:</div>
+        <div class="row text">
+            <div class="col-sm-3">Dias</div>
+            <div class="col-sm-3">Horas</div>
+            <div class="col-sm-3">Minutos</div>
+            <div class="col-sm-3">Segundos</div>
+        </div>
+        <div class="contagem row">
+            <div class="dias col-sm-3"><?php echo $expira_em[0] ?></div>
+            <div class="horas col-sm-3"><?php echo $expira_em[1] ?></div>
+            <div class="minutos col-sm-3"><?php echo $expira_em[2] ?></div>
+            <div class="segundos col-sm-3"><?php echo $expira_em[3] ?></div>
+        </div>
+    </div>
+    <?php
+endif;
+?>

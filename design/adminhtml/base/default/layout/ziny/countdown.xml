@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<layout version="1.0.3">
+    <adminhtml_system_countdown>
+        <reference name="head">
+            <action method="addJs" ifconfig="countdown_options/general/ativo">
+                <script>jscolor/jscolor.js</script>
+            </action>
+        </reference>
+    </adminhtml_system_countdown>
+</layout>

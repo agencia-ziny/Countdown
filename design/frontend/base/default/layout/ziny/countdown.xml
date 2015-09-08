@@ -1,0 +1,27 @@
+<layout version="1.0.0">
+    <default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>ziny/countdown/css/geral.css</name>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="controller_tool_javascript" template="ziny/countdown/countdown_js.phtml"/>
+        </reference>
+    </default>
+    <catalog_product_view>
+        <reference name="product.info.extrahint">
+            <block type="countdown/countdown" name="countdown" template="ziny/countdown/countdown.phtml" output="toHtml"/>
+        </reference>
+    </catalog_product_view>  
+    <layout version="1.0.3">
+        <adminhtml_system_countdown>
+            <reference name="head">
+                <action method="addJs" ifconfig="countdown_options/general/ativo">
+                    <script>jscolor/jscolor.js</script>
+                </action>
+            </reference>
+        </adminhtml_system_countdown>
+    </layout>
+</layout>
